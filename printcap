@@ -1,0 +1,22 @@
+# Photosmart C4580 with color
+# lp name makes it the default printer
+HP Photosmart C4580|hp|lp:\
+        :lp=9100@192.168.1.100:\
+        :sd=/var/spool/lpd/hp:\
+        :lf=/var/log/lp-errs:\
+        :if=/usr/local/bin/hpfilter:\
+        :mx#0:\
+        :pl#0:\
+        :pw#0:\
+        :sh:
+
+# Photosmart C4580 with only black and white
+HP Photosmart C4580 (Black and White)|hp-bnw:\
+        :lp=9100@192.168.1.100:\
+        :sd=/var/spool/lpd/hp-bnw:\
+        :lf=/var/log/lp-errs:\
+        :if=/usr/local/bin/hpfilter-bnw:\
+        :mx#0:\
+        :pl#0:\
+        :pw#0:\
+        :sh:
