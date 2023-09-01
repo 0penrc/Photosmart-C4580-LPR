@@ -1,6 +1,6 @@
 #!/bin/sh
-cat | a2ps -q -B --media A4 --columns 1 --rows 1 -o - | \
+{ cat | a2ps -q -B --media A4 --columns 1 --rows 1 -o - | \
 gs -dQUIET -dSAFER \
 -sDEVICE=ijs -sIjsServer=hpijs -sDeviceManufacturer=HEWLETT-PACKARD -sDeviceModel='Photosmart C4500' \
 -dIjsUseOutputFD -sOutputFile=%stdout% -dNOPAUSE \
--- /dev/stdin 2>/dev/null
+-- /dev/stdin 2>&1 1>&3 | sed '/STATE: -marker-supply-low-warning/d' 1>&2; } 3>&1
